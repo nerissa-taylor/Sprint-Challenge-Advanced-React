@@ -15,13 +15,18 @@ class Players extends React.Component {
         fetch("http://localhost:5000/api/players")
 
             .then(response => response.json())
-            .then(response => this.setState({ players: response.data }))
+
+            .then(response =>
+
+
+                this.setState({ players: response.data }))
+        console.log(response)
             .catch(err => console.log("nooo"));
     }
     handleChanges = event =>
         this.setState({ PlayersList: event.target.value })
     render() {
-        console.log(render)
+        const { data } = response.data
         return (
             <div className="players">
                 <h1>Hello Players</h1>

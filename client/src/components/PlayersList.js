@@ -8,7 +8,7 @@ class PlayersList extends React.Component {
         }
     }
     render() {
-        const { players } = this.state
+
 
         return (
             <div className="players-list">
