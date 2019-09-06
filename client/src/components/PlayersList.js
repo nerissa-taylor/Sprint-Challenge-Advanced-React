@@ -1,15 +1,25 @@
 import React from 'react';
 
-function PlayersList(props) {
-    return (
-        <div className="players-list">
+class PlayersList extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            players: []
+        }
+    }
+    render() {
+        const { players } = this.state
 
-            <h1>Name:{props.name}</h1>
-            <p>Country:{props.country}</p>
-            <p>Searches:{props.searches}</p>
-            <p>id:{props.id}</p>
+        return (
+            <div className="players-list">
 
-        </div>
-    )
+                <h1>Name:{this.props.name}</h1>
+                <p>Country:{this.props.country}</p>
+                <p>Searches:{this.props.searches}</p>
+                <p>id:{this.props.id}</p>
+
+            </div>
+        )
+    }
 }
 export default PlayersList;

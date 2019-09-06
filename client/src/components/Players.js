@@ -5,7 +5,7 @@ class Players extends React.Component {
     constructor() {
         super();
         this.state = {
-            players: [],
+            players: [];
 
 
 
@@ -18,19 +18,20 @@ class Players extends React.Component {
             .then(response => this.setState({ players: response.data }))
             .catch(err => console.log("nooo"));
     }
-
+    handleChanges = event =>
+        this.setState({ PlayersList: event.target.value })
     render() {
-
+        console.log(render)
         return (
             <div className="players">
                 <h1>Hello Players</h1>
                 {this.state.players && this.state.players.map(player =>
-                    (<PlayersList key={this.state.id} player={this.state.players} />
+                    (<PlayersList key={this.state.player.id} player={this.state.players} />
                     ))}
-                <p>{this.state.name}</p>
-                <p>{this.state.country}</p>
-                <p>{this.state.searches}</p>
-                <p>{this.state.id}</p>
+                <p>{this.state.players.name}</p>
+                <p>{this.state.players.country}</p>
+                <p>{this.state.players.searches}</p>
+                <p>{this.state.players.id}</p>
 
             </div>
 
