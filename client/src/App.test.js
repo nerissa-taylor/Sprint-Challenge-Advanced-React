@@ -7,3 +7,9 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+test('contain Players name, () =>
+{
+   { getByText } = render(<App />)
+    getByText(/players/i);
+getByText(/name/i);
+});
