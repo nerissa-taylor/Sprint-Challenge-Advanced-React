@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library-react';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('App renders without crashing', () => {
+  render(<App />);
+
 });
-test('contain Players name, () =>
-{
-   { getByText } = render(<App />)
-    getByText(/players/i);
-getByText(/name/i);
+test('contain Players name', () => {
+  const container = render(<App />);
+  container.getByText("name");
+  getByText(/players/i);
+  getByText(/name/i);
 });
