@@ -9,5 +9,5 @@ test('App renders without crashing', () => {
 });
 test('contain Players', () => {
   const container = render(<App />);
-  container.getByText(/players/i);
+  container.getAllByText(/Players/i);
 });
